@@ -42,11 +42,11 @@ var AUTOPREFIXER_BROWSERS = [
 
 // Lint JavaScript
 gulp.task('jshint', function () {
-  return gulp.src('app/scripts/**/*.syntax--js')
+  return gulp.src('app/scripts/**/*.js')
     .pipe(reload({stream: true, once: true}))
-    .pipe($.syntax--jshint())
-    .pipe($.syntax--jshint.reporter('jshint-stylish'))
-    .pipe($.if(!browserSync.active, $.syntax--jshint.reporter('fail')));
+    .pipe($.jshint())
+    .pipe($.jshint.reporter('jshint-stylish'))
+    .pipe($.if(!browserSync.active, $.jshint.reporter('fail')));
 });
 
 // Optimize Images
@@ -64,7 +64,7 @@ gulp.task('images', function () {
 gulp.task('copy', function () {
   return gulp.src([
     'app/*',
-    '!app/*.syntax--html',
+    '!app/*.html',
     'node_modules/apache-server-configs/dist/.htaccess'
   ], {
     dot: true
@@ -84,20 +84,20 @@ gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
     'app/styles/*.scss',
-    'app/styles/**/*.syntax--css',
+    'app/styles/**/*.css',
     'app/styles/components/components.scss'
   ])
-    .pipe($.syntax--sourcemaps.init())
-    .pipe($.syntax--changed('.tmp/styles', {extension: '.syntax--css'}))
+    .pipe($.sourcemaps.init())
+    .pipe($.changed('.tmp/styles', {extension: '.css'}))
     .pipe($.sass({
       precision: 10,
       onError: console.error.bind(console, 'Sass error:')
     }))
     .pipe($.autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
-    .pipe($.syntax--sourcemaps.write())
+    .pipe($.sourcemaps.write())
     .pipe(gulp.dest('.tmp/styles'))
     // Concatenate And Minify Styles
-    .pipe($.if('*.syntax--css', $.syntax--csso()))
+    .pipe($.if('*.css', $.csso()))
     .pipe(gulp.dest('dist/styles'))
     .pipe($.size({title: 'styles'}));
 });
@@ -106,17 +106,17 @@ gulp.task('styles', function () {
 gulp.task('html', function () {
   var assets = $.useref.assets({searchPath: '{.tmp,app}'});
 
-  return gulp.src('app/**/*.syntax--html')
+  return gulp.src('app/**/*.html')
     .pipe(assets)
     // Concatenate And Minify JavaScript
-    .pipe($.if('*.syntax--js', $.uglify({preserveComments: 'some'})))
+    .pipe($.if('*.js', $.uglify({preserveComments: 'some'})))
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
-    .pipe($.if('*.syntax--css', $.uncss({
+    .pipe($.if('*.css', $.uncss({
       html: [
-        'app/index.syntax--html',
-        'app/styleguide.syntax--html'
+        'app/index.html',
+        'app/styleguide.html'
       ],
       // CSS Selectors for UnCSS to ignore
       ignore: [
@@ -126,13 +126,13 @@ gulp.task('html', function () {
     })))
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
-    .pipe($.if('*.syntax--css', $.syntax--csso()))
+    .pipe($.if('*.css', $.csso()))
     .pipe(assets.restore())
     .pipe($.useref())
     // Update Production Style Guide Paths
-    .pipe($.replace('components/components.syntax--css', 'components/main.min.syntax--css'))
+    .pipe($.replace('components/components.css', 'components/main.min.css'))
     // Minify Any HTML
-    .pipe($.if('*.syntax--html', $.minifyHtml()))
+    .pipe($.if('*.html', $.minifyHtml()))
     // Output Files
     .pipe(gulp.dest('dist'))
     .pipe($.size({title: 'html'}));
@@ -154,9 +154,9 @@ gulp.task('serve', ['styles'], function () {
     server: ['.tmp', 'app']
   });
 
-  gulp.watch(['app/**/*.syntax--html'], reload);
+  gulp.watch(['app/**/*.html'], reload);
   gulp.watch(['app/styles/**/*.{scss,css}'], ['styles', reload]);
-  gulp.watch(['app/scripts/**/*.syntax--js'], ['jshint']);
+  gulp.watch(['app/scripts/**/*.js'], ['jshint']);
   gulp.watch(['app/images/**/*'], reload);
 });
 

@@ -9,7 +9,7 @@ the aid of their country. __This is__ just a
 regular paragraph.
 
 The quick brown fox **jumped** over the lazy
-dog's back. [Link](http://www.syntax--link.com)
+dog's back. [Link](http://www.link.com)
 
 ### Header 3
 
