@@ -1,15 +1,64 @@
 {
-  "name": "galaxy-syntax",
-  "theme": "syntax",
-  "version": "1.1.0",
+  "_args": [
+    [
+      {
+        "raw": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/d-1161029-2575-138tz0s/package.tgz",
+        "scope": null,
+        "escapedName": null,
+        "name": null,
+        "rawSpec": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/d-1161029-2575-138tz0s/package.tgz",
+        "spec": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/d-1161029-2575-138tz0s/package.tgz",
+        "type": "local"
+      },
+      "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/apm-install-dir-1161029-2575-1oaqrpw"
+    ]
+  ],
+  "_from": "../d-1161029-2575-138tz0s/package.tgz",
+  "_id": "galaxy-syntax@1.1.0",
+  "_inCache": true,
+  "_installable": true,
+  "_location": "/galaxy-syntax",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/d-1161029-2575-138tz0s/package.tgz",
+    "scope": null,
+    "escapedName": null,
+    "name": null,
+    "rawSpec": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/d-1161029-2575-138tz0s/package.tgz",
+    "spec": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/d-1161029-2575-138tz0s/package.tgz",
+    "type": "local"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "file:../d-1161029-2575-138tz0s/package.tgz",
+  "_shasum": "56f4776c7f3f1dada67badf0e55aa4b3c5b54f4a",
+  "_shrinkwrap": null,
+  "_spec": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/d-1161029-2575-138tz0s/package.tgz",
+  "_where": "/private/var/folders/q7/slcqrh_14_n8ptg3lr311jl00000gn/T/apm-install-dir-1161029-2575-1oaqrpw",
+  "bugs": {
+    "url": "https://github.com/rossedman/galaxy-syntax/issues"
+  },
+  "dependencies": {},
   "description": "A theme made of intergalactic colors and spacedust. For the code voyagers.",
+  "devDependencies": {},
+  "engines": {
+    "atom": ">=0.174.0 <2.0.0"
+  },
+  "homepage": "https://github.com/rossedman/galaxy-syntax#readme",
   "keywords": [
     "syntax",
     "theme"
   ],
-  "repository": "https://github.com/rossedman/galaxy-syntax",
   "license": "MIT",
-  "engines": {
-    "atom": ">=0.174.0 <2.0.0"
-  }
+  "name": "galaxy-syntax",
+  "optionalDependencies": {},
+  "readme": "# Galaxy Atom Syntax Theme\n\nAn out of this world theme composed of all the colors of the galaxy. For the code voyagers of this world. This syntax contains support and customized highlighting for HTML, LESS, Jade, JSON, Markdown, Mustache, YAML and more!\n\n## Installation\n\nUse `apm` to get galactic real quick\n\n  apm install galaxy-syntax\n\n## More Galaxy\n\nI'm pretty OCD about my whole desktop matching, that being said I have also created an iTerm theme, a Sublime Text 3 Theme & UITheme as well as Galaxy Light. Also, an Atom UI theme is in the works. Get all of that great stuff here:\n\n- [Sublime Text Theme & UI](https://github.com/rossedman/galaxy-theme)\n- [iTerm Theme](https://github.com/rossedman/galaxy-iterm)\n- [Atom Galaxy Syntax Light](https://github.com/rossedman/galaxy-light-syntax)\n\n## Screenshots\n\nHere are some screenshots below. This is using Atom's One Dark UI kit and is highly recommended!\n\n![A screenshot of your theme](https://github.com/rossedman/galaxy-syntax/blob/master/screenshots/galaxy-php.png?raw=true)\n![A screenshot of your theme](https://github.com/rossedman/galaxy-syntax/blob/master/screenshots/galaxy-ruby.png?raw=true)\n![A screenshot of your theme](https://github.com/rossedman/galaxy-syntax/blob/master/screenshots/galaxy-javascript.png?raw=true)\n![A screenshot of your theme](https://github.com/rossedman/galaxy-syntax/blob/master/screenshots/galaxy-markdown.png?raw=true)\n![A screenshot of your theme](https://github.com/rossedman/galaxy-syntax/blob/master/screenshots/galaxy-html.png?raw=true)\n",
+  "readmeFilename": "README.md",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rossedman/galaxy-syntax.git"
+  },
+  "theme": "syntax",
+  "version": "1.1.0"
 }

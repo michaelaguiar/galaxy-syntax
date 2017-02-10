@@ -1,13 +1,13 @@
 @import "colors.less";
 
 // EDITOR BACKGROUND & FONT COLORS
-.atom-text-editor, :host {
+.atom-text-editor,atom-text-editor {
   background-color: @code-background;
   color: @code-font-color;
 }
 
 // MAIN CODE EDITOR STYLES
-.atom-text-editor, :host {
+.atom-text-editor,atom-text-editor {
 
   background-color: @code-background;
   color: @code-font-color;
@@ -101,8 +101,6 @@
   // SELECTED LINE STYLE
   .line.cursor-line {
     background: @selected-line !important;
-    padding-left: 10px;
-    margin-left: -10px;
   }
 
 

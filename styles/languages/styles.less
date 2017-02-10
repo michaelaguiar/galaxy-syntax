@@ -1,24 +1,24 @@
 @import "colors";
 
-.css {
-  .entity.name.tag {
+.syntax--css {
+  .syntax--entity.syntax--name.syntax--tag {
     color: @keyword;
   }
-  .support.type.property-name {
+  .syntax--support.syntax--type.syntax--property-name {
     color: @entity;
   }
-  .punctuation.definition,
-  .punctuation.separator.operator,
-  .entity.other.attribute-name.pseudo-class {
+  .syntax--punctuation.syntax--definition,
+  .syntax--punctuation.syntax--separator.syntax--operator,
+  .syntax--entity.syntax--other.syntax--attribute-name.syntax--pseudo-class {
     color: lighten(@keyword, 20%);
   }
-  .meta.selector {
+  .syntax--meta.syntax--selector {
     color: lighten(@keyword, 30%);
   }
 }
 
-.less {
-  .punctuation.definition.comment {
+.syntax--less {
+  .syntax--punctuation.syntax--definition.syntax--comment {
     color: @comment;
   }
 }
